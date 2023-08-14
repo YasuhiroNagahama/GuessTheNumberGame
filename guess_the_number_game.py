@@ -7,7 +7,7 @@ def printDistanceToTarget(answer, target):
 
     if distance >= 10:
         print("It's a lot farther than the numbers I set!!")
-    elif distance >= 6:
+    elif distance >= 4:
         print("It's a little farther than the number I decided on!!")
     else:
         print("It's just a little farther than the numbers I've decided on!!")
