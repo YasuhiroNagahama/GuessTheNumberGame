@@ -6,41 +6,41 @@ def printDistanceToTarget(answer, target):
     distance = math.fabs(target - answer)
 
     if distance >= 10:
-        print("It's a lot farther than the numbers I set!!")
+        print("はるかに遠いです!!")
     elif distance >= 4:
-        print("It's a little farther than the number I decided on!!")
+        print("ちょっと遠いです!!")
     else:
-        print("It's just a little farther than the numbers I've decided on!!")
+        print("あと少しです!!")
 
 
 def showWinOrLoss(win, target):
     if win:
         print()
-        print("Is the correct answer!!")
-        print("The number I created is " + str(target) + "!!")
-        print("You win!!")
+        print("正解です!!")
+        print("私が決めた数字は " + str(target) + " です!!")
+        print("あなたの勝ちです!!")
     else:
-        print("You loss.(T_T)")
-        print("The number I created is " + str(target) + "!")
+        print("あなたの負けです(T_T)")
+        print("私が決めた数字は " + str(target) + " でした!!")
 
     while True:
         print()
-        again = input("Play again? Y/N : ")
+        again = input("もう一度遊びますか? Y/N : ")
         again = again.upper()
 
         if again == "Y":
             print()
-            print("Start Guess the number game again!")
+            print("再開します!!")
             inputNumber()
             break
         elif again == "N":
             print()
-            print("OK!")
-            print("Quit the game.")
+            print("了解しました!!")
+            print("さようなら!!")
             break
         else:
             print()
-            print("Please enter Y or N.")
+            print("Y か N を押してください。")
             continue
 
 
@@ -55,33 +55,35 @@ def startGame(min, max):
         maxCount = 1
 
     print()
-    print("You can answer " + str(maxCount) + " more times.")
+    print("あと " + str(maxCount) + " 回回答出来ます。")
 
     while count <= maxCount:
-        answer = input("Guess between " + str(min) + " and " + str(max) + " : ")
+        answer = input(str(min) + " から " + str(max) + " の中から推測してください!! : ")
 
         if not (str.isdigit(answer)):
             print()
-            print("You can only enter positive integers.")
+            print("整数のみ入力できます。")
             continue
         elif int(answer) < min:
             print()
-            print("That's less than " + str(min) + ".")
+            print("その値は" + min + "未満です。")
             continue
         elif int(answer) > max:
             print()
-            print("That's greater than " + str(max) + ".")
+            print("その値は " + max + " より大きいです。")
             continue
         elif int(answer) == target:
             win = True
             break
         else:
             print()
-            print("Incorrect.(T_T)")
+            print("不正解(T_T)")
             printDistanceToTarget(int(answer), target)
 
+        rest = maxCount - count
         print()
-        print("You can answer " + str(maxCount - count) + " more times.")
+        if (rest > 0):
+            print("あと " + str(rest) + " 回回答出来ます。")
         count += 1
 
     showWinOrLoss(win, target)
@@ -90,23 +92,20 @@ def startGame(min, max):
 def inputNumber():
     while True:
         print()
-        min = input("Determine the smallest positive integer value : ")
-        max = input("Determine the largest positive integer value : ")
+        min = input("最小の正の整数値を決定して下さい : ")
+        max = input("最大の正の整数値を決定して下さい : ")
 
         if not (str.isdigit(min)) or not (str.isdigit(max)):
             print()
-            print("Please enter a valid value!!\n")
+            print("有効な値を入力してください!!\n")
         elif int(min) >= int(max):
             print()
-            print("The minimum value should be greater than the maximum value!!\n")
+            print("最小値は最大値より大きくなければなりません!!\n")
         else:
             print()
             print(
-                "I will choose a number from "
-                + min
-                + " to "
-                + max
-                + ". Please guess the number I decided."
+                str(min) + " から " + str(max) + " の間でランダムに数字を選びます。"
+                + "私が決めた数字を当ててください!!"
             )
             startGame(int(min), int(max))
             break
@@ -115,21 +114,21 @@ def inputNumber():
 def checkStartGame():
     while True:
         print()
-        start = input("Do you want to start the game? Y/N : ")
+        start = input("ゲームを始めますか? Y/N : ")
         start = start.upper()
 
         if start == "Y":
             print()
-            print("Start Guess the number game!")
+            print("Guess the number game を始めます!!")
             inputNumber()
             break
         elif start == "N":
             print()
-            print("OK!")
+            print("了解しました。")
             break
         else:
             print()
-            print("Please enter Y or N.")
+            print("Y か N を入力してください。")
             continue
 
 
