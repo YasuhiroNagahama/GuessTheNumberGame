@@ -8,7 +8,7 @@ GuessTheNumberGame
 
 # Demo
 
-
+https://github.com/YasuhiroNagahama/guess-the-number-game/assets/125679029/1b1f96ae-45f8-42b5-9d45-7ea2e5f079f7
 
 # Features
 
