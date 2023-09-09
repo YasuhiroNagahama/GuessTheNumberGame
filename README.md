@@ -4,7 +4,7 @@ GuessTheNumberGame
 
 # Explain
 
-指定した最小値、最大値から、機械側がランダムに決めた数字を推測するゲーム
+指定した最小値、最大値から、機械側がランダムに決めた数字を推測するゲーム。
 
 # Demo
 
@@ -12,7 +12,7 @@ https://github.com/YasuhiroNagahama/guess-the-number-game/assets/125679029/1b1f9
 
 # Features
 
-* 推測した数字がどのくらい離れているのかを教えてくれる
+* 推測した数字がどのくらい離れているのかを教えてくれる機能を付けました。
 
 # Author
 
